@@ -1,0 +1,3 @@
+[submodule "API-rails-restaurants"]
+	path = API-rails-restaurants
+	url = https://github.com/andremude/API-rails-restaurants
