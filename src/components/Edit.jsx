@@ -39,8 +39,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
     const json = await response.json();
 
     setName(json.name)
-    setAddress(json.address)
-    setLoading(false);
+    setAddress(json.address);
   }
 
   const handleSubmit = async () => {
@@ -65,11 +64,12 @@ export default function Edit({ current, edit, setEdit, refresh }) {
     console.log(response);
     setEdit(false);
     refresh();
+    setLoading(false)
   }
 
   return (
     <div>
-      {loading ? <>Fetching data...</> : <>
+      {loading ? <>.</> : <>
         <Modal
           open={edit}
           onClose={() => setEdit(false)}

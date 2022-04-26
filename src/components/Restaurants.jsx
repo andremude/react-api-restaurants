@@ -8,25 +8,25 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Create from './Create';
 import Edit from './Edit';
+import Show from './Show';
 
 const Restaurants = () => {
 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true); // Maneja los tiempos de carga
-  const [error, setError] = useState(false); // Maneja errores
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [create, setCreate] =useState(false);
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(null);
 
   useEffect(() => {
-    console.log("esta es mi app de React!")
     initData();
   }, [])
 
   const initData = async () => {
-    var url = process.env.REACT_APP_API_URL;
+    const url = process.env.REACT_APP_API_URL;
 
-    var requestOptions = {
+    const requestOptions = {
       method: 'GET'
     };
 
@@ -38,10 +38,14 @@ const Restaurants = () => {
       setLoading(false);
       setError(true);
     } else {
-      alert("Error fetching data!")
+      alert(error.message)
       setLoading(false);
       setError(true);
     }
+  }
+
+  const handleShow = (restaurant) => {
+      console.log(restaurant);
   }
 
   const handleEdit = (item) => {
@@ -94,8 +98,9 @@ const Restaurants = () => {
             {data.map((item, i) => (
             <TableRow>
               <TableCell style={tablestyle}> {item.id} </TableCell>
-              <TableCell> {item.name} </TableCell>
+              <TableCell> {item.name}  </TableCell>
               <TableCell> {item.address} </TableCell>
+              <TableCell onClick={() => handleShow(item)} className="see-more"> <Show/> </TableCell>
               <TableCell
                 onClick={() => handleEdit(item)}>
                   <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,6 +131,7 @@ const Restaurants = () => {
         setEdit={setEdit} // Cierra el modal desde si mismo
         refresh={initData} // Actualiza el dato automaticamente una vez modificado
         />
+
       <button
         onClick={() => setCreate(true)} className="add-restaurant-btn">
         Add Restaurant

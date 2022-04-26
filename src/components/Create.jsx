@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -24,11 +24,11 @@ export default function Create({ create, setCreate, initData }) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    var url = process.env.REACT_APP_API_URL;
+    const url = process.env.REACT_APP_API_URL;
 
     const body = { name, address }
 
-    var requestOptions = {
+    const requestOptions = {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +41,7 @@ export default function Create({ create, setCreate, initData }) {
     const response = await fetch(url, requestOptions);
     setCreate(false);
     initData();
+    setLoading(false);
   }
 
   return (
