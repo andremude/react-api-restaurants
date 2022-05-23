@@ -57,6 +57,7 @@ export default function Create({ create, setCreate, initData }) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add new restaurant
           </Typography>
+          <br />
           <TextField
           style={{ marginTop: '25', width: '93%' }}
           id="outlined-basic"
@@ -64,6 +65,7 @@ export default function Create({ create, setCreate, initData }) {
           variant="outlined"
           value={name}
           onChange={(e) => setName(e.target.value)}/>
+        <br />
         <br />
           <TextField
             style={{ marginTop: '25', width: '93%' }}

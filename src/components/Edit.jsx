@@ -28,9 +28,9 @@ export default function Edit({ current, edit, setEdit, refresh }) {
   }, [current])
 
   const fetchData = async () => {
-    var url = process.env.REACT_APP_API_URL + '/' + current.id;
+    let url = process.env.REACT_APP_API_URL + '/' + current.id;
 
-    var requestOptions = {
+    let requestOptions = {
       method: 'GET',
       redirect: 'follow'
     };
@@ -40,10 +40,11 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
     setName(json.name)
     setAddress(json.address);
+    setLoading(false);
   }
 
   const handleSubmit = async () => {
-    var url = process.env.REACT_APP_API_URL + '/' + current.id;
+    let url = process.env.REACT_APP_API_URL + '/' + current.id;
 
     const body = { name, address }
 
@@ -69,7 +70,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
   return (
     <div>
-      {loading ? <>.</> : <>
+      {loading ? <>Loading Data</> : <>
         <Modal
           open={edit}
           onClose={() => setEdit(false)}

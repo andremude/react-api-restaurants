@@ -57,9 +57,9 @@ const Restaurants = () => {
   const handleDelete = async (item) => {
     console.log(item);
 
-    var url = process.env.REACT_APP_API_URL + '/' + item.id;
+    let url = process.env.REACT_APP_API_URL + '/' + item.id;
 
-    var requestOptions = {
+    let requestOptions = {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
