@@ -14,7 +14,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 6,
 };
 
 export default function Edit({ current, edit, setEdit, refresh }) {
@@ -81,6 +81,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Edit Restaurant ID: {current.id}
             </Typography>
+            <br />
             <TextField
               style={{ marginTop: '25', width: '93%' }}
               id="outlined-basic"
@@ -88,6 +89,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
               variant="outlined"
               value={name}
               onChange={(e) => setName(e.target.value)} />
+            <br />
             <br />
             <TextField
               style={{ marginTop: '25', width: '93%' }}
