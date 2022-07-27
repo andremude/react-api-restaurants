@@ -70,43 +70,41 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
   return (
     <div>
-      {loading ? <>Loading Data</> : <>
-        <Modal
-          open={edit}
-          onClose={() => setEdit(false)}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Edit Restaurant ID: {current.id}
-            </Typography>
-            <br />
-            <TextField
-              style={{ marginTop: '25', width: '93%' }}
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-              value={name}
-              onChange={(e) => setName(e.target.value)} />
-            <br />
-            <br />
-            <TextField
-              style={{ marginTop: '25', width: '93%' }}
-              id="outlined-basic"
-              label="Address"
-              variant="outlined"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)} />
-            <br />
-            <Button
-              variant="outlined"
-              style={{ marginTop: '22px', width: '93%' }}
-              onClick={handleSubmit}
-            >Save Changes</Button>
-          </Box>
-        </Modal>
-      </>}
+      <Modal
+        open={edit}
+        onClose={() => setEdit(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Edit Restaurant ID: {current.id}
+          </Typography>
+          <br />
+          <TextField
+            style={{ marginTop: '25', width: '93%' }}
+            id="outlined-basic"
+            label="Name"
+            variant="outlined"
+            value={name}
+            onChange={(e) => setName(e.target.value)} />
+          <br />
+          <br />
+          <TextField
+            style={{ marginTop: '25', width: '93%' }}
+            id="outlined-basic"
+            label="Address"
+            variant="outlined"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)} />
+          <br />
+          <Button
+            variant="outlined"
+            style={{ marginTop: '22px', width: '93%' }}
+            onClick={handleSubmit}
+          >Save Changes</Button>
+        </Box>
+      </Modal>
     </div>
   );
 }
