@@ -79,7 +79,7 @@ export default function Create({ create, setCreate, initData }) {
             variant="outlined"
             style={{ marginTop: '22px', width: '93%'}}
             onClick={handleSubmit}
-          >Save Changes</Button>
+          >Add Restaurant</Button>
         </Box>
       </Modal>
     </>}
