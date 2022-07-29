@@ -17,7 +17,7 @@ const style = {
   p: 4,
 };
 
-export default function Show({ restaurant_id, show, setShow }) {
+export default function Show({ item }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -33,10 +33,10 @@ export default function Show({ restaurant_id, show, setShow }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Name
+            {item.name}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum pharetra eros. Duis blandit diam in nisi dapibus, vel interdum ante bibendum. Quisque ligula leo, vestibulum a dolor eget, scelerisque imperdiet sem. Mauris eu ornare arcu. Sed ante felis, faucibus a vestibulum non, volutpat sed lorem. Vivamus scelerisque, ipsum a ullamcorper iaculis, orci turpis vulputate est, a mollis elit purus in metus. Proin a facilisis urna. Nam malesuada odio in sem ultrices, lobortis volutpat sem posuere. Phasellus sit amet tellus non ligula ultrices rhoncus et a mi.
           </Typography>
         </Box>
       </Modal>

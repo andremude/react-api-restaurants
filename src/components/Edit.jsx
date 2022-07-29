@@ -14,14 +14,13 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 6,
+  p: 6
 };
 
 export default function Edit({ current, edit, setEdit, refresh }) {
 
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -40,7 +39,6 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
     setName(json.name)
     setAddress(json.address);
-    setLoading(false);
   }
 
   const handleSubmit = async () => {
@@ -65,7 +63,6 @@ export default function Edit({ current, edit, setEdit, refresh }) {
     console.log(response);
     setEdit(false);
     refresh();
-    setLoading(false)
   }
 
   return (
@@ -78,7 +75,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Edit Restaurant ID: {current.id}
+            Edit Restaurant
           </Typography>
           <br />
           <TextField

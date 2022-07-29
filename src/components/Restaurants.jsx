@@ -100,7 +100,7 @@ const Restaurants = () => {
               {/* <TableCell style={tablestyle}> {item.id} </TableCell> */}
               <TableCell> {item.name}  </TableCell>
               <TableCell> {item.address} </TableCell>
-              <TableCell onClick={() => handleShow(item)} className="see-more"> <Show/> </TableCell>
+              <TableCell onClick={() => handleShow(item)} handleShow={handleShow} className="see-more"> <Show item={item}/> </TableCell>
               <TableCell
                 onClick={() => handleEdit(item)}>
                   <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,10 +126,10 @@ const Restaurants = () => {
         initData={initData}
         />
       <Edit
-        current={current} //Current es el restaurante que queremos editar en este momento.
-        edit={edit} // Edit es el booleano que decide si se abre o no el modal.
-        setEdit={setEdit} // Cierra el modal desde si mismo
-        refresh={initData} // Actualiza el dato automaticamente una vez modificado
+        current={current}
+        edit={edit}
+        setEdit={setEdit}
+        refresh={initData}
         />
 
       <button
