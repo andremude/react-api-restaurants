@@ -93,7 +93,8 @@ const Restaurants = () => {
             <TableRow>
               <TableCell style={tablestyle}>Name</TableCell>
               <TableCell style={tablestyle}>Address</TableCell>
-              <TableCell></TableCell>
+              <TableCell ></TableCell>
+              <TableCell ></TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
