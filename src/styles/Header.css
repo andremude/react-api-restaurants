@@ -1,0 +1,17 @@
+header {
+  background: #222;
+  font-size: 14px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 200px;
+  margin-bottom: 40px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}

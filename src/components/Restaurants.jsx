@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import Create from './Create';
 import Edit from './Edit';
 import Show from './Show';
+import '../styles/Restaurants.css'
 
 const Restaurants = () => {
 
@@ -18,6 +19,7 @@ const Restaurants = () => {
   const [create, setCreate] =useState(false);
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(null);
+  const [query, setQuery] = useState("")
 
   useEffect(() => {
     initData();
@@ -80,11 +82,15 @@ const Restaurants = () => {
 
   return (
     <div className='restaurants-container'>
+      <input
+        placeholder="Search for a restaurant's name or address"
+        onChange={event => setQuery(event.target.value)}
+        className="search-bar"
+        />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth:650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              {/* <TableCell style={tablestyle}>ID</TableCell> */}
               <TableCell style={tablestyle}>Name</TableCell>
               <TableCell style={tablestyle}>Address</TableCell>
               <TableCell></TableCell>
@@ -95,10 +101,18 @@ const Restaurants = () => {
           {loading ? <>Loading...</> : <>
 
           <TableBody>
-            {data.map((item, i) => (
+            {data.filter(item => {
+              if (query === '') {
+                return item;
+              } else if (item.name.toLowerCase().includes(query.toLowerCase())) {
+                return item;
+              } else if (item.address.toLowerCase().includes(query.toLowerCase())) {
+                return item;
+              }
+            })
+            .map((item, i) => (
             <TableRow>
-              {/* <TableCell style={tablestyle}> {item.id} </TableCell> */}
-              <TableCell> {item.name}  </TableCell>
+              <TableCell> <b>{item.name}</b>  </TableCell>
               <TableCell> {item.address} </TableCell>
               <TableCell onClick={() => handleShow(item)} handleShow={handleShow} className="see-more"> <Show item={item}/> </TableCell>
               <TableCell
@@ -113,7 +127,6 @@ const Restaurants = () => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
               </TableCell>
-
             </TableRow>
             ))}
           </TableBody>

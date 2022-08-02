@@ -1,11 +1,11 @@
-import React from "react";
+import { React } from "react";
+import '../styles/Header.css'
 
 const Header = ({ query, setQuery }) => {
+
   return (
     <header className="navbar">
-      <div><h1 className='title'> Restaurant Finder 🔍</h1></div>
-        <div className="links">
-        </div>
+      <h1 className='title'> Restaurant Finder 🔍</h1>
     </header>
   );
 };
