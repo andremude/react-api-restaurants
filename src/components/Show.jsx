@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import '../styles/Show.css'
+import '../styles/Show.css';
+import TextField from '@mui/material/TextField';
 
 const style = {
   position: 'absolute',
@@ -36,9 +37,32 @@ export default function Show({ item }) {
             {item.name}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum pharetra eros. Duis blandit diam in nisi dapibus, vel interdum ante bibendum. Quisque ligula leo, vestibulum a dolor eget, scelerisque imperdiet sem. Mauris eu ornare arcu. Sed ante felis, faucibus a vestibulum non, volutpat sed lorem. Vivamus scelerisque, ipsum a ullamcorper iaculis, orci turpis vulputate est, a mollis elit purus in metus. Proin a facilisis urna. Nam malesuada odio in sem ultrices, lobortis volutpat sem posuere. Phasellus sit amet tellus non ligula ultrices rhoncus et a mi.
+            {item.description}
+            {item.address}
           </Typography>
-        </Box>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Add Review
+            </Typography>
+          <br />
+          <TextField
+          style={{ marginTop: '25', width: '93%' }}
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"/>
+          <br />
+          <br />
+          <TextField
+            style={{ marginTop: '25', width: '93%' }}
+            id="outlined-basic"
+            label="Address"
+            variant="outlined"/>
+            <br />
+            <br />
+            <Button
+            variant="outlined"
+            style={{ marginTop: '22px', width: '93%'}}
+          >Add Review</Button>
+          </Box>
       </Modal>
     </div>
   );

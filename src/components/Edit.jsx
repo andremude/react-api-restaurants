@@ -21,6 +21,7 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -38,13 +39,14 @@ export default function Edit({ current, edit, setEdit, refresh }) {
     const json = await response.json();
 
     setName(json.name)
-    setAddress(json.address);
+    setAddress(json.address)
+    setDescription(json.description);
   }
 
   const handleSubmit = async () => {
     let url = process.env.REACT_APP_API_URL + '/' + current.id;
 
-    const body = { name, address }
+    const body = { name, address, description }
 
     console.log(body)
 
@@ -94,6 +96,15 @@ export default function Edit({ current, edit, setEdit, refresh }) {
             variant="outlined"
             value={address}
             onChange={(e) => setAddress(e.target.value)} />
+          <br />
+          <br />
+          <TextField
+            style={{ marginTop: '25', width: '93%' }}
+            id="outlined-basic"
+            label="Description"
+            variant="outlined"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)} />
           <br />
           <Button
             variant="outlined"

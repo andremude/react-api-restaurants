@@ -21,12 +21,13 @@ export default function Create({ create, setCreate, initData }) {
 
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
+  const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
     const url = process.env.REACT_APP_API_URL;
 
-    const body = { name, address }
+    const body = { name, address, description }
 
     const requestOptions = {
       method: 'POST',
@@ -42,6 +43,7 @@ export default function Create({ create, setCreate, initData }) {
     setCreate(false);
     initData();
     setLoading(false);
+    return response
   }
 
   return (
@@ -65,8 +67,8 @@ export default function Create({ create, setCreate, initData }) {
           variant="outlined"
           value={name}
           onChange={(e) => setName(e.target.value)}/>
-        <br />
-        <br />
+          <br />
+          <br />
           <TextField
             style={{ marginTop: '25', width: '93%' }}
             id="outlined-basic"
@@ -74,6 +76,15 @@ export default function Create({ create, setCreate, initData }) {
             variant="outlined"
             value={address}
             onChange={(e) => setAddress(e.target.value)} />
+          <br />
+          <br />
+          <TextField
+            style={{ marginTop: '25', width: '93%' }}
+            id="outlined-basic"
+            label="Description"
+            variant="outlined"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)} />
           <br />
           <Button
             variant="outlined"
