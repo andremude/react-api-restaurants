@@ -1,5 +1,4 @@
 import './App.css';
-import 'dotenv/config'
 import Restaurants from './components/Restaurants'
 import Header from './components/Header'
 import Footer from './components/Footer'
