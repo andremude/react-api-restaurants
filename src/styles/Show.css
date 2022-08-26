@@ -5,10 +5,7 @@
 }
 
 #info-btn {
-  border: 1px solid black;
-  color: black;
-  font-weight: bold;
-  text-align: center;
+  background-color: transparent;
 }
 
 #info-btn:hover {

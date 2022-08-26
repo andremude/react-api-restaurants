@@ -98,14 +98,6 @@ export default function Edit({ current, edit, setEdit, refresh }) {
             onChange={(e) => setAddress(e.target.value)} />
           <br />
           <br />
-          <TextField
-            style={{ marginTop: '25', width: '93%' }}
-            id="outlined-basic"
-            label="Description"
-            variant="outlined"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)} />
-          <br />
           <Button
             variant="outlined"
             style={{ marginTop: '22px', width: '93%' }}

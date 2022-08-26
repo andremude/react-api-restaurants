@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Create from './Create';
 import Edit from './Edit';
-import Show from './Show';
+// import Show from './Show';
 import '../styles/Restaurants.css'
 
 const Restaurants = () => {
@@ -49,9 +49,9 @@ const Restaurants = () => {
     }
   }
 
-  const handleShow = (item) => {
-      console.log(item);
-  }
+  // const handleShow = (item) => {
+  //     console.log(item);
+  // }
 
   const handleEdit = (item) => {
     setEdit(true);
@@ -91,12 +91,11 @@ const Restaurants = () => {
         className="search-bar"
         />
       <TableContainer component={Paper} >
-        <Table sx={{ minWidth:650 }} aria-label="simple table" >
+        <Table sx={{ minWidth:380 }} aria-label="simple table" >
           <TableHead>
             <TableRow>
               <TableCell style={tablestyle}>Name</TableCell>
               <TableCell style={tablestyle}>Address</TableCell>
-              <TableCell ></TableCell>
               <TableCell ></TableCell>
               <TableCell ></TableCell>
             </TableRow>
@@ -119,7 +118,7 @@ const Restaurants = () => {
             <TableRow>
               <TableCell> <b>{item.name}</b>  </TableCell>
               <TableCell> {item.address} </TableCell>
-              <TableCell onClick={() => handleShow(item)} className="see-more"> <Show item={item}/> </TableCell>
+              {/* <TableCell onClick={() => handleShow(item)}> <Show item={item}/> </TableCell> */}
               <TableCell
                 onClick={() => handleEdit(item)}>
                   <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

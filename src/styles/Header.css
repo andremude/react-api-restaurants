@@ -7,11 +7,8 @@ header {
   color: white;
   height: 200px;
   margin-bottom: 40px;
-}
-
-.title {
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  flex-direction: column;
 }
