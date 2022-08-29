@@ -1,4 +1,4 @@
-.see-more-container {
+.info-container {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -8,6 +8,6 @@
   background-color: transparent;
 }
 
-#info-btn:hover {
-  transform: scale(1.05);
+#modal-modal-title {
+  text-decoration: underline;
 }

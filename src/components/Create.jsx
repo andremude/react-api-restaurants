@@ -15,19 +15,19 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  textAlign: 'center'
 };
 
 export default function Create({ create, setCreate, initData }) {
 
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
-  const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
     const url = process.env.REACT_APP_API_URL;
 
-    const body = { name, address, description }
+    const body = { name, address }
 
     const requestOptions = {
       method: 'POST',
@@ -57,7 +57,7 @@ export default function Create({ create, setCreate, initData }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add new restaurant
+            Add New Restaurant
           </Typography>
           <br />
           <TextField
@@ -76,7 +76,6 @@ export default function Create({ create, setCreate, initData }) {
             variant="outlined"
             value={address}
             onChange={(e) => setAddress(e.target.value)} />
-          <br />
           <br />
           <Button
             variant="outlined"

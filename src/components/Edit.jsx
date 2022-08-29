@@ -14,14 +14,14 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 6
+  p: 6,
+  textAlign: 'center'
 };
 
 export default function Edit({ current, edit, setEdit, refresh }) {
 
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
-  const [description, setDescription] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -40,13 +40,12 @@ export default function Edit({ current, edit, setEdit, refresh }) {
 
     setName(json.name)
     setAddress(json.address)
-    setDescription(json.description);
   }
 
   const handleSubmit = async () => {
     let url = process.env.REACT_APP_API_URL + '/' + current.id;
 
-    const body = { name, address, description }
+    const body = { name, address }
 
     console.log(body)
 
@@ -96,7 +95,6 @@ export default function Edit({ current, edit, setEdit, refresh }) {
             variant="outlined"
             value={address}
             onChange={(e) => setAddress(e.target.value)} />
-          <br />
           <br />
           <Button
             variant="outlined"
