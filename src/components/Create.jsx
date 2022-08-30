@@ -55,7 +55,8 @@ export default function Create({ create, setCreate, initData }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box
+        sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add New Restaurant
           </Typography>
